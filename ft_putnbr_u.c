@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:49:07 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 12:29:14 by oelkhiar         ###   ########.fr       */
+/*   Created: 2022/11/30 12:36:01 by oelkhiar          #+#    #+#             */
+/*   Updated: 2022/11/30 13:26:58 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putnbr_u(unsigned int c)
+{
+	int	len;
 
-int	ft_putchr(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int c);
-int	ft_putnbr_xu(unsigned int c);
-int	ft_putnbr_xl(unsigned int c);
-#endif
+	len = 0;
+	if (c > 9)
+	{
+		ft_putnbr_u(c / 10);
+		c %= 10;
+	}
+	len += ft_putchr(c + 48);
+	return (len);
+}

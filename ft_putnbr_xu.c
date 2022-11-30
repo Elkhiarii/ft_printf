@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_xu.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:49:07 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 12:29:14 by oelkhiar         ###   ########.fr       */
+/*   Created: 2022/11/30 12:15:47 by oelkhiar          #+#    #+#             */
+/*   Updated: 2022/11/30 12:29:03 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putnbr_xu(unsigned int c)
+{
+	char	*base;
+	int		len;
 
-int	ft_putchr(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int c);
-int	ft_putnbr_xu(unsigned int c);
-int	ft_putnbr_xl(unsigned int c);
-#endif
+	base = "0123456789ABCDEF";
+	len = 0;
+	if (c > 15)
+	{
+		ft_putnbr_x(c / 16);
+		c %= 16;
+	}
+	len += write(1, &base[c], 1);
+	return (len);
+}
