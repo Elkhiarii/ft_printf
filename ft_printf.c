@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:39:36 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/12/02 17:29:36 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:53:27 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,8 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(args);
 	return (len);
+}
+int main()
+{
+	ft_printf("%d",-2147483648);
 }

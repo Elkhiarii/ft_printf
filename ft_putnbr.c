@@ -6,16 +6,18 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:59:37 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 11:52:15 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:54:34 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int c)
+int	ft_putnbr(int k)
 {
 	int	len;
+	int long c;
 
+	c = k;
 	len = 0;
 	if (c < 0)
 	{
