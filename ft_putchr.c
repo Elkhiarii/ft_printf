@@ -6,13 +6,13 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:48:19 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/29 18:31:15 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:23:02 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchr(char c)
+int	ft_putchr(int c)
 {
 	int	len;
 

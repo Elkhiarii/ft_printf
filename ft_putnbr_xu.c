@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:15:47 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 12:29:03 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:16:12 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_putnbr_xu(unsigned int c)
 	len = 0;
 	if (c > 15)
 	{
-		ft_putnbr_x(c / 16);
+		ft_putnbr_xu(c / 16);
 		c %= 16;
 	}
 	len += write(1, &base[c], 1);
