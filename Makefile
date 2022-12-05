@@ -6,7 +6,7 @@
 #    By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 17:29:32 by oelkhiar          #+#    #+#              #
-#    Updated: 2022/12/02 17:29:33 by oelkhiar         ###   ########.fr        #
+#    Updated: 2022/12/05 15:53:37 by oelkhiar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	:= libftprintf.a
 CC		:= cc
 HDR = ft_printf.h
 CFLAGS	:= -Wall -Wextra -Werror
-FILES	:=    ft_printf.c ft_putchr.c ft_putnbr_u.c ft_putnbr_xu.c ft_putnbr_xl.c ft_putstr.c ft_putnbr.c
+FILES	:=    ft_printf.c ft_putchr.c ft_putnbr_u.c ft_putnbr_x.c ft_putstr.c ft_putnbr.c
 
 OBJ		:= $(FILES:%.c=%.o)
 

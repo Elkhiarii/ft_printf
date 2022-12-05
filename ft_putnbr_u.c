@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:36:01 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 13:39:22 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:08:46 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putnbr_u(unsigned int c)
 	len = 0;
 	if (c > 9)
 	{
-		ft_putnbr_u(c / 10);
+		len += ft_putnbr_u(c / 10);
 		c %= 10;
 	}
 	len += ft_putchr(c + 48);

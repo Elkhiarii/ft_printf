@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_xl.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:26:55 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/11/30 12:34:49 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:55:11 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_xl(unsigned int c)
+int	ft_putnbr_x(unsigned long c, char *base)
 {
-	char	*base;
 	int		len;
 
 	len = 0;
-	base = "0123456789abcdef";
 	if (c > 15)
 	{
-		ft_putnbr_xl(c / 16);
-		c %= 16;
+		len += ft_putnbr_x(c / 16, base);
+		len += write(1, &base[c %= 16], 1);
 	}
-	len += write(1, &base[c], 1);
+	else
+		len += write(1, &base[c], 1);
 	return (len);
 }

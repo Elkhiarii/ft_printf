@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:39:36 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/12/04 17:16:47 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:54:26 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ int	check(va_list args, char n)
 	else if (n == 'u')
 		len += ft_putnbr_u(va_arg(args, unsigned int));
 	else if (n == 'x')
-		len += ft_putnbr_xl(va_arg(args, unsigned int));
+		len += ft_putnbr_x(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (n == 'X')
-		len += ft_putnbr_xu(va_arg(args, unsigned int));
+		len += ft_putnbr_x(va_arg(args, unsigned int), "0123456789ABCDEF");
+	else if (n == 'p')
+	{
+		len += ft_putstr("0x");
+		len += ft_putnbr_x(va_arg(args, size_t), "0123456789abcdef");
+	}
 	else if (n == '%')
 		len += ft_putchr('%');
 	else
